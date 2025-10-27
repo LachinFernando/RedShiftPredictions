@@ -94,7 +94,7 @@ if uploaded_file is not None:
                     # Placeholder for prediction logic
                     continuous_columns = [col for col in ALL_COLUMNS if col not in CATEGORICAL_COLUMNS]
                     df[continuous_columns] = scaler_model.transform(df[continuous_columns])
-                    predictions = model.predict(df.values)
+                    predictions = model.predict(df)
                     st.header("Predicted Redshifts: {}".format(predictions[0]))
                     
         except Exception as error:
